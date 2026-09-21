@@ -1,0 +1,70 @@
+.ratio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.ratio-btn {
+  display: flex;
+  min-height: 54px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 4px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--text);
+  background: var(--surface-2);
+  cursor: pointer;
+  transition-property: color, background-color, border-color, scale;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+.ratio-btn:active { scale: 0.96; }
+.ratio-btn:hover { border-color: var(--accent); background: var(--surface); }
+.ratio-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); font-weight: 600; }
+.ratio-val { font-size: 11px; font-weight: 600; }
+.ratio-shape { display: block; flex: 0 0 auto; margin-bottom: 5px; border: 1.5px solid currentColor; border-radius: 2px; }
+.ratio-shape--1-1 { width: 14px; height: 14px; }
+.ratio-shape--3-4 { width: 11px; height: 15px; }
+.ratio-shape--4-3 { width: 16px; height: 12px; }
+.ratio-shape--16-9 { width: 20px; height: 11px; }
+.ratio-shape--9-16 { width: 10px; height: 17px; }
+.ratio-shape--21-9 { width: 22px; height: 9px; }
+
+.background-option-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.background-option {
+  display: flex;
+  min-width: 0;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--muted);
+  background: var(--surface-2);
+  font-size: 11px;
+}
+
+.background-option:hover { border-color: var(--accent); color: var(--text); background: var(--surface); }
+.background-option.active { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); font-weight: 600; }
+
+.background-swatch {
+  width: 13px;
+  height: 13px;
+  flex: 0 0 auto;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+}
+
+.background-swatch--opaque { background: var(--surface); }
+.background-swatch--transparent { background: repeating-conic-gradient(rgb(120 120 120 / 24%) 0 25%, transparent 0 50%) 50% / 6px 6px; }
+.background-swatch--auto { background: linear-gradient(135deg, var(--surface) 0 48%, currentColor 49% 51%, transparent 52% 100%); }

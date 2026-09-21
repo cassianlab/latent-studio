@@ -1,0 +1,15 @@
+.conversation-artifacts { display: grid; gap: 8px; margin-top: 12px; }
+.conversation-artifact { min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); }
+.conversation-artifact-heading { display: flex; min-width: 0; align-items: flex-start; gap: 9px; padding: 11px 12px 8px; }
+.conversation-artifact-icon { display: grid; width: 30px; height: 30px; flex: 0 0 30px; place-items: center; border: 1px solid var(--line); border-radius: 6px; color: var(--accent); background: var(--surface-2); }
+.conversation-artifact-heading > div { display: grid; min-width: 0; gap: 2px; }
+.conversation-artifact-heading small { color: var(--muted); font-size: 10px; }
+.conversation-artifact-heading strong { overflow: hidden; color: var(--text); font-size: 12px; line-height: 1.35; text-overflow: ellipsis; white-space: nowrap; }
+.conversation-artifact-heading span { overflow: hidden; color: var(--soft); font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.conversation-artifact-actions { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 12px 10px 51px; }
+.conversation-artifact-actions button { display: inline-flex; align-items: center; gap: 5px; }
+.conversation-artifact-content { max-height: 440px; overflow: auto; padding: 14px 16px; border-top: 1px solid var(--line); background: var(--surface-2); }
+.conversation-artifact-content pre { margin: 0; color: var(--text); font: inherit; line-height: 1.65; white-space: pre-wrap; overflow-wrap: anywhere; }
+.conversation-prompt-editor { width: min(680px, 100%); }
+.conversation-prompt-editor textarea { min-height: 240px; }
+@media (max-width: 640px) { .conversation-artifact-actions { padding-left: 12px; } }

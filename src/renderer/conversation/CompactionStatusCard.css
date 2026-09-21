@@ -1,0 +1,48 @@
+.compaction-status-card {
+  width: min(720px, calc(100% - 32px));
+  margin: 10px auto 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--surface) 94%, var(--accent) 6%);
+  color: var(--text);
+}
+
+.compaction-status-card summary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 10px 12px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.compaction-status-card summary::-webkit-details-marker { display: none; }
+.compaction-status-icon { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; background: var(--accent-soft); color: var(--accent); }
+.compaction-status-copy { display: grid; gap: 3px; min-width: 0; }
+.compaction-status-copy strong { font-size: 13px; }
+.compaction-status-copy span { overflow: hidden; color: var(--muted); font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+.compaction-mode-badge { border: 1px solid var(--line); border-radius: 999px; padding: 4px 8px; color: var(--muted); font-size: 10px; white-space: nowrap; }
+.compaction-status-card.official .compaction-mode-badge { border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); color: var(--accent); }
+.compaction-chevron { color: var(--muted); transition: transform 180ms ease; }
+.compaction-status-card[open] .compaction-chevron { transform: rotate(180deg); }
+.compaction-status-details { display: grid; gap: 12px; padding: 0 14px 14px 54px; }
+.compaction-status-details dl { display: grid; gap: 6px; margin: 0; }
+.compaction-status-details dl div { display: grid; grid-template-columns: 72px 1fr; gap: 8px; font-size: 11px; }
+.compaction-status-details dt { color: var(--muted); }
+.compaction-status-details dd { margin: 0; overflow-wrap: anywhere; }
+.compaction-status-details section { border-top: 1px solid var(--line); padding-top: 10px; }
+.compaction-status-details h4 { margin: 0 0 6px; font-size: 12px; }
+.compaction-status-details p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.65; white-space: pre-wrap; }
+.compaction-note { padding: 8px 10px; border-radius: 8px; background: var(--surface-2); }
+
+@media (max-width: 720px) {
+  .compaction-status-card summary { grid-template-columns: auto minmax(0, 1fr) auto; }
+  .compaction-mode-badge { display: none; }
+  .compaction-status-details { padding-left: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .compaction-chevron { transition: none; }
+}

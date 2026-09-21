@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "description": "Latent Studio 随包 Skill 的稳定清单；排序按 Skill 名称，不依赖文件系统返回顺序。",
+  "skills": [
+    {"name":"creative-brief-planner","path":"builtin/creative-brief-planner","kind":"builtin"},
+    {"name":"image-prompt-optimizer","path":"builtin/image-prompt-optimizer","kind":"builtin"},
+    {"name":"prompt-template-library","path":"builtin/prompt-template-library","kind":"builtin","source":"legacy 生图/src/shared/prompt-templates.ts"},
+    {"name":"shot-planner","path":"builtin/shot-planner","kind":"builtin"}
+  ]
+}

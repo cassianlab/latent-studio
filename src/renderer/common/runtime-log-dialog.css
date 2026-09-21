@@ -1,0 +1,19 @@
+.runtime-log-overlay { z-index: 1250 !important; }
+.runtime-log-dialog { position: fixed; z-index: 1251; top: 50%; left: 50%; display: flex; flex-direction: column; width: min(720px, calc(100vw - 40px)); height: min(560px, calc(100dvh - 48px)); transform: translate(-50%, -50%); overflow: hidden; border: 1px solid var(--line); border-radius: 8px; color: var(--text); background: var(--surface); box-shadow: 0 28px 80px rgb(0 0 0 / 32%); }
+.runtime-log-dialog > header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 17px 18px 15px; border-bottom: 1px solid var(--line); }
+.runtime-log-dialog h2 { display: flex; align-items: center; gap: 8px; margin: 0 0 5px; font-size: 15px; }
+.runtime-log-dialog header p { margin: 0; color: var(--muted); font-size: 11px; }
+.runtime-log-actions { display: flex; gap: 4px; }
+.runtime-log-actions button { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 5px; color: var(--muted); background: transparent; }
+.runtime-log-actions button:hover:not(:disabled) { color: var(--text); background: var(--surface-2); }
+.runtime-log-list { flex: 1; min-height: 0; overflow-y: auto; padding: 6px 0; }
+.runtime-log-row { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 8px; padding: 11px 18px; border-bottom: 1px solid var(--line); }
+.runtime-log-row > svg { margin-top: 2px; color: var(--muted); }
+.runtime-log-row.error > svg { color: var(--red); }
+.runtime-log-row.warn > svg { color: #a66a00; }
+.runtime-log-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; color: var(--muted); font-size: 10px; }
+.runtime-log-meta span { padding: 1px 5px; border: 1px solid var(--line); border-radius: 3px; }
+.runtime-log-row strong { display: block; font-size: 12px; line-height: 1.5; overflow-wrap: anywhere; }
+.runtime-log-row pre { max-height: 150px; margin: 7px 0 0; padding: 8px; overflow: auto; border-radius: 5px; color: var(--muted); background: var(--surface-2); font: 10px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
+.runtime-log-empty { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; min-height: 260px; color: var(--muted); font-size: 12px; }
+.runtime-log-empty.error { color: var(--red); }

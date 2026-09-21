@@ -1,0 +1,156 @@
+/* =========================================================
+   Assets Filter Bar Styles (Categories, Ref Filter, Guide)
+   ========================================================= */
+
+.segmented-scroll {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+}
+
+.segmented-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Reference Only Filter Toggle in Filterbar */
+.ref-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.ref-filter-btn:hover {
+  background: var(--surface-2);
+  color: var(--text);
+  border-color: var(--soft);
+}
+
+.ref-filter-btn.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.ref-filter-badge {
+  display: inline-grid;
+  place-items: center;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Shortcuts Trigger Popover in Filterbar */
+.shortcuts-trigger-box {
+  position: relative;
+  display: inline-flex;
+}
+
+.shortcuts-trigger-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 32px;
+  padding: 0 10px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.shortcuts-trigger-btn:hover,
+.shortcuts-trigger-btn.active {
+  background: var(--surface-2);
+  color: var(--text);
+  border-color: var(--soft);
+}
+
+.shortcuts-popover-card {
+  position: absolute;
+  top: 38px;
+  right: 0;
+  z-index: 60;
+  width: 250px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.16), 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: asset-popover-in 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.app.dark .shortcuts-popover-card {
+  background: #242321;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes asset-popover-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.shortcuts-popover-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--line);
+}
+
+.shortcuts-popover-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.shortcuts-popover-row.highlight {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.shortcuts-popover-row kbd {
+  display: inline-block;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-family: inherit;
+  font-weight: 600;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--text);
+}

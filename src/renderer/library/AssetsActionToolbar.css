@@ -1,0 +1,189 @@
+/* =========================================================
+   AssetsActionToolbar - Top Grid Action & Selection Bar
+   ========================================================= */
+
+.asset-action-toolbar {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 14px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 40px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--muted);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.asset-action-toolbar.batch-active {
+  background: #fff8f8;
+  border-color: rgba(230, 79, 88, 0.45);
+  box-shadow: 0 2px 12px rgba(230, 79, 88, 0.08);
+}
+
+.app.dark .asset-action-toolbar {
+  background: #201e1c;
+  border-color: #35322e;
+}
+
+.app.dark .asset-action-toolbar.batch-active {
+  background: #282120;
+  border-color: rgba(230, 79, 88, 0.45);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* Left controls: Checkbox, count, tags */
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.toolbar-select-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+}
+
+.toolbar-master-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--line);
+  background: var(--surface-2);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 0;
+}
+
+.toolbar-master-checkbox:hover {
+  border-color: var(--soft);
+  background: var(--surface);
+}
+
+.toolbar-master-checkbox.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 1px 4px rgba(230, 79, 88, 0.35);
+}
+
+.toolbar-master-checkbox.partial {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.toolbar-select-text-btn {
+  background: none;
+  border: none;
+  padding: 2px 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.toolbar-select-text-btn:hover {
+  color: var(--accent);
+}
+
+.toolbar-divider {
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  background: var(--line);
+}
+
+.toolbar-meta-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.toolbar-meta-info b {
+  color: var(--text);
+}
+
+.toolbar-ref-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 7px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Right batch actions */
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toolbar-batch-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: toolbar-slide-in 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes toolbar-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.toolbar-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 28px;
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.toolbar-action-btn.asset-batch-del-btn {
+  background: var(--accent) !important;
+  color: #ffffff !important;
+  border-color: var(--accent) !important;
+}
+
+.toolbar-action-btn.asset-batch-del-btn:hover {
+  background: #d44049 !important;
+  border-color: #d44049 !important;
+}
+
+.toolbar-clear-btn {
+  width: 26px;
+  height: 26px;
+  color: var(--muted);
+}
+
+.toolbar-clear-btn:hover {
+  color: var(--text);
+  background: var(--surface-2);
+}

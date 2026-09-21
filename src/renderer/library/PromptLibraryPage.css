@@ -1,0 +1,63 @@
+.prompt-sync-group { display: flex; align-items: center; gap: 6px; }
+.prompt-sync-group select { height: 30px; max-width: 190px; padding: 0 28px 0 9px; border: 1px solid var(--line); border-radius: 6px; color: var(--text); background: var(--surface); font-size: 11px; }
+.prompt-sync-progress { max-width: 1100px; margin: -7px auto 14px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); }
+.prompt-sync-progress-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.prompt-sync-progress-heading > div { min-width: 0; display: flex; align-items: baseline; gap: 8px; }
+.prompt-sync-progress-heading strong { color: var(--text); font-size: 11px; }
+.prompt-sync-progress-heading span { min-width: 0; overflow: hidden; color: var(--muted); font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.prompt-sync-progress-count { flex: none; font-variant-numeric: tabular-nums; }
+.prompt-sync-progress progress { display: block; width: 100%; height: 5px; margin: 9px 0 0; accent-color: var(--accent); }
+.prompt-sync-source-results { display: grid; gap: 6px; margin-top: 10px; }
+.prompt-sync-source-result { display: grid; min-width: 0; align-items: center; grid-template-columns: 16px minmax(150px, .7fr) minmax(0, 1.3fr); gap: 7px; color: var(--muted); font-size: 10px; }
+.prompt-sync-source-result svg { color: var(--green); }
+.prompt-sync-source-result.failed svg, .prompt-sync-source-result.failed span { color: var(--accent); }
+.prompt-sync-source-result strong { overflow: hidden; color: var(--text); text-overflow: ellipsis; white-space: nowrap; }
+.prompt-sync-source-result span { overflow-wrap: anywhere; }
+.prompt-source-tabs { flex-wrap: wrap; }
+.prompt-source-count { margin-left: 3px; color: var(--soft); font-variant-numeric: tabular-nums; }
+.prompt-source-tabs button.active .prompt-source-count { color: var(--muted); }
+.prompt-grid { align-items: start; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.prompt-grid .prompt-card { min-height: 0; overflow: hidden; padding: 0; }
+.prompt-card-preview { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border-bottom: 1px solid var(--line); background: var(--surface-2); }
+.prompt-card-preview img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.prompt-card:not(.has-preview) .prompt-card-preview { display: none; }
+.prompt-card-placeholder { display: grid; width: 100%; height: 100%; place-items: center; color: var(--soft); }
+.prompt-preview-label { position: absolute; top: 8px; left: 8px; padding: 3px 6px; border-radius: 4px; color: #fff; background: rgb(20 18 17 / 72%); font-size: 10px; }
+.prompt-card-body { display: flex; min-height: 190px; flex-direction: column; padding: 14px 14px 10px; }
+.prompt-card-meta { display: flex; align-items: center; gap: 5px; }
+.prompt-card-meta .pill { max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.prompt-category-pill { color: var(--accent); }
+.prompt-version { margin-left: auto; color: var(--muted); font-size: 10px; }
+.prompt-favorite-toggle { display: grid; width: 24px; height: 24px; place-items: center; padding: 0; border-radius: 5px; color: var(--muted); background: transparent; }
+.prompt-favorite-toggle:hover, .prompt-favorite-toggle.active { color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.prompt-favorite-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.prompt-card-body h3 { margin: 11px 0 7px; line-height: 1.35; }
+.prompt-language-switch { display: flex; width: fit-content; gap: 2px; margin: 0 0 7px; padding: 2px; border: 1px solid var(--line); border-radius: 5px; background: var(--surface-2); }
+.prompt-language-switch button { padding: 3px 7px; border-radius: 3px; color: var(--muted); background: transparent; font-size: 9px; }
+.prompt-language-switch button.selected { color: var(--text); background: var(--surface); box-shadow: 0 1px 2px rgb(0 0 0 / 8%); }
+.prompt-card-body p { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 5; }
+.prompt-card-body p.expanded { display: block; overflow: visible; }
+.prompt-expand { width: fit-content; margin-top: 7px; padding: 0; color: var(--accent); background: transparent; font-size: 10px; }
+.prompt-card-actions { display: grid; align-items: center; grid-template-columns: auto minmax(0, 1fr) 31px 31px; gap: 6px; margin-top: 0; padding: 10px 12px 12px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; }
+.prompt-card-actions.read-only { grid-template-columns: auto minmax(0, 1fr) 31px; }
+.prompt-grid .prompt-card-actions button { width: auto; margin: 0; padding: 0 9px; }
+.prompt-grid .prompt-card-actions .prompt-apply-button { border: 1px solid #b8323d; color: #fff; background: #b8323d; box-shadow: 0 2px 7px rgb(184 50 61 / 22%); }
+.prompt-grid .prompt-card-actions .prompt-apply-button:hover { border-color: #9f2832; color: #fff; background: #9f2832; }
+.prompt-grid .prompt-card-actions .prompt-apply-button:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+.app.dark .prompt-grid .prompt-card-actions .prompt-apply-button { border-color: #ff777c; color: #181615; background: #ff777c; box-shadow: 0 2px 9px rgb(255 119 124 / 24%); }
+.app.dark .prompt-grid .prompt-card-actions .prompt-apply-button:hover { border-color: #ff9195; color: #181615; background: #ff9195; }
+.prompt-grid .prompt-card-actions .icon-button { width: 31px; padding: 0; }
+.prompt-load-more { display: flex; justify-content: center; max-width: 1100px; margin: 18px auto 0; }
+.prompt-editor-taxonomy { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+@media (max-width: 1180px) {
+  .prompt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 820px) {
+  .prompt-grid { grid-template-columns: minmax(0, 1fr); }
+  .prompt-heading-actions { justify-content: flex-start; }
+  .prompt-sync-group { flex-wrap: wrap; }
+  .prompt-sync-source-result { grid-template-columns: 16px minmax(0, 1fr); }
+  .prompt-sync-source-result span { grid-column: 2; }
+}

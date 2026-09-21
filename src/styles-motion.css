@@ -1,0 +1,256 @@
+/* ==========================================================================
+   Latent Studio - Micro-Interactions & Commercial UI Motion System
+   UI/UX Pro Max Motion Guidelines:
+   - Spring-like snappy easing: cubic-bezier(0.16, 1, 0.3, 1)
+   - Tactile button press feedback: scale(0.96 - 0.98)
+   - Hover lift on interactive cards: translateY(-2px to -3px)
+   ========================================================================== */
+
+/* 1. Global Interactive Controls & Buttons */
+button {
+  transition: background 0.16s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.16s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.16s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.16s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.14s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.975);
+}
+
+/* Primary Action Buttons */
+.primary {
+  transition: transform 0.16s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.15s ease,
+              opacity 0.15s ease;
+}
+
+.primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(230, 79, 88, 0.32);
+}
+
+.primary:active:not(:disabled) {
+  transform: translateY(0) scale(0.96);
+}
+
+/* Secondary Action Buttons */
+.secondary {
+  transition: transform 0.16s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.15s ease,
+              border-color 0.15s ease,
+              color 0.15s ease;
+}
+
+.secondary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: var(--surface);
+  border-color: var(--soft);
+  box-shadow: 0 4px 12px rgba(25, 23, 20, 0.05);
+}
+
+.app.dark .secondary:hover:not(:disabled) {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  border-color: #4a606d;
+}
+
+.secondary:active:not(:disabled) {
+  transform: translateY(0) scale(0.97);
+}
+
+/* Icon Buttons & Card Action Buttons */
+.icon-button,
+.asset-card-more-btn {
+  transition: background 0.15s ease,
+              color 0.15s ease,
+              border-color 0.15s ease,
+              box-shadow 0.15s ease,
+              transform 0.14s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.icon-button:hover:not(:disabled),
+.asset-card-more-btn:hover:not(:disabled) {
+  transform: scale(1.06);
+}
+
+.icon-button:active:not(:disabled),
+.asset-card-more-btn:active:not(:disabled) {
+  transform: scale(0.93);
+}
+
+/* 2. Navigation & Sidebar Micro-interactions */
+nav button,
+.sidebar-bottom > button {
+  transition: background 0.15s ease,
+              color 0.15s ease,
+              transform 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+nav button:hover:not(.active),
+.sidebar-bottom > button:hover {
+  transform: translateX(2px);
+}
+
+nav button.active {
+  transform: translateX(1px);
+}
+
+/* 3. Cards & Surfaces Motion */
+.plan-card {
+  transition: box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.18s ease;
+}
+
+.plan-card:hover {
+  box-shadow: 0 8px 24px rgba(25, 23, 20, 0.07);
+}
+
+.app.dark .plan-card:hover {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+}
+
+.asset-card {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.18s ease;
+}
+
+.asset-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(25, 23, 20, 0.08);
+}
+
+.asset-card img {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.asset-card:hover img {
+  transform: scale(1.035);
+}
+
+.prompt-grid article {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.18s ease;
+}
+
+.prompt-grid article:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(25, 23, 20, 0.08);
+}
+
+/* 4. Pills & Criteria Chips */
+.pill {
+  transition: background 0.15s ease,
+              color 0.15s ease,
+              border-color 0.15s ease,
+              transform 0.14s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pill:hover {
+  transform: translateY(-1px);
+}
+
+.criteria-chips button {
+  transition: all 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.criteria-chips button:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.criteria-chips button:active {
+  transform: scale(0.96);
+}
+
+/* 5. Modal & Dialog Spring-in Animation */
+.dialog-content {
+  animation: modal-spring-in 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modal-spring-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -46%) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* 6. Form Inputs Focus & Transition */
+input,
+textarea,
+select {
+  transition: border-color 0.15s ease,
+              box-shadow 0.15s ease,
+              background 0.15s ease;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-soft);
+  border-color: var(--accent);
+}
+
+/* 7. Mode Switch Tabs Transition */
+.mode-switch > button {
+  transition: all 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mode-switch > button:hover:not(.active) {
+  color: var(--text);
+  background: var(--surface-2);
+}
+
+.mode-switch > button:active {
+  transform: scale(0.96);
+}
+
+/* 8. Inspector Collapsed State */
+.inspector {
+  transition: width 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              padding 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.2s ease;
+}
+
+.inspector.collapsed {
+  width: 44px !important;
+  padding: 14px 4px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  cursor: pointer;
+}
+
+.inspector.collapsed:hover {
+  background: var(--surface-2);
+}
+
+.inspector-collapsed-trigger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.inspector-collapsed-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  user-select: none;
+  padding-top: 4px;
+}
+

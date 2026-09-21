@@ -1,0 +1,20 @@
+.window-close-overlay { background: rgb(18 17 16 / 56%); }
+.window-close-dialog { width: min(460px, calc(100vw - 40px)); }
+.window-close-options { display: grid; gap: 9px; }
+.window-close-option { display: grid; grid-template-columns: 36px minmax(0, 1fr); align-items: center; gap: 11px; width: 100%; padding: 12px; border: 1px solid var(--line); border-radius: 8px; color: var(--text); background: var(--surface-2); text-align: left; }
+.window-close-option:hover { border-color: var(--soft); background: var(--surface); }
+.window-close-option.danger:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); background: var(--accent-soft); }
+.window-close-option-icon { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 7px; color: var(--muted); background: var(--surface); }
+.window-close-option.danger .window-close-option-icon { color: var(--accent); background: var(--accent-soft); }
+.window-close-option strong, .window-close-option small, .window-close-remember strong, .window-close-remember small { display: block; }
+.window-close-option strong { font-size: 12px; }
+.window-close-option small { margin-top: 4px; color: var(--muted); font-size: 10px; line-height: 1.45; }
+.window-close-remember { display: flex !important; flex-direction: row !important; align-items: center; gap: 9px !important; margin: 15px 0 0 !important; padding: 10px 11px; border: 1px solid var(--line); border-radius: 7px; cursor: pointer; }
+.window-close-remember input { width: 14px; height: 14px; accent-color: var(--accent); }
+.window-close-remember strong { color: var(--text); font-size: 11px; }
+.window-close-remember small { margin-top: 2px; color: var(--muted); font-size: 9px; }
+.window-close-command-note { margin: 11px 0 0; color: var(--muted); font-size: 9px; line-height: 1.5; }
+
+@media (prefers-reduced-motion: reduce) {
+  .window-close-overlay { animation: none; }
+}

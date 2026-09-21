@@ -1,0 +1,15 @@
+.prompt-parameter-dialog { position: fixed; inset: 0; z-index: 1300; display: grid; place-items: center; padding: 20px; background: rgb(22 20 18 / 48%); }
+.prompt-parameter-dialog__card { width: min(520px, calc(100vw - 40px)); max-height: min(720px, calc(100vh - 40px)); overflow: auto; padding: 20px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); box-shadow: 0 20px 70px rgb(0 0 0 / 25%); }
+.prompt-parameter-dialog header { display: flex; justify-content: space-between; gap: 14px; margin-bottom: 18px; }
+.prompt-parameter-dialog h3 { margin: 0 0 5px; font-size: 15px; }
+.prompt-parameter-dialog header p { margin: 0; color: var(--muted); font-size: 10px; }
+.prompt-parameter-dialog__fields { display: grid; gap: 12px; }
+.prompt-parameter-dialog__fields label { display: grid; gap: 6px; color: var(--muted); font-size: 10px; }
+.prompt-parameter-dialog__fields label > span { display: flex; align-items: center; gap: 6px; }
+.prompt-parameter-dialog__fields em, .prompt-parameter-dialog__fields small { color: var(--accent); font-size: 9px; font-style: normal; }
+.prompt-parameter-dialog__fields small { color: var(--muted); }
+.prompt-parameter-dialog__fields input, .prompt-parameter-dialog__fields select { min-width: 0; border: 1px solid var(--line); border-radius: 5px; padding: 8px 9px; color: var(--text); background: var(--surface-2); outline: 0; font-size: 11px; }
+.prompt-parameter-dialog__preview { margin-top: 15px; padding: 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface-2); }
+.prompt-parameter-dialog__preview span { color: var(--muted); font-size: 9px; }
+.prompt-parameter-dialog__preview p { max-height: 130px; overflow: auto; margin: 5px 0 0; white-space: pre-wrap; color: var(--text); font-size: 10px; line-height: 1.5; }
+.prompt-parameter-dialog footer { display: flex; justify-content: flex-end; gap: 7px; margin-top: 18px; }

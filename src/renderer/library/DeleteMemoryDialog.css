@@ -1,0 +1,238 @@
+/* ==========================================================================
+   DeleteMemoryDialog - Desktop Memory Deletion Confirmation Modal
+   ========================================================================== */
+
+.memory-delete-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1280;
+  background: rgba(14, 18, 22, 0.58) !important;
+  backdrop-filter: blur(8px) saturate(0.85);
+  -webkit-backdrop-filter: blur(8px) saturate(0.85);
+  animation: fade 0.15s ease;
+}
+
+.memory-delete-dialog {
+  position: fixed;
+  z-index: 1285 !important;
+  top: 50%;
+  left: 50%;
+  width: min(460px, calc(100vw - 32px));
+  transform: translate(-50%, -50%);
+  padding: 22px 24px 20px;
+  border-radius: 12px;
+  background: var(--surface, #ffffff) !important;
+  border: 1px solid var(--line, #d5dfe3);
+  box-shadow: 0 24px 70px rgba(10, 15, 20, 0.32), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  outline: none;
+  animation: dialog-surface-in 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.dark .memory-delete-dialog,
+.dark .memory-delete-dialog {
+  background: #1e1d1b !important;
+  border-color: #383531;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+/* Header */
+.memory-delete-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.memory-delete-head-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.memory-delete-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 3px;
+}
+
+.memory-delete-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text, #1b2529);
+  margin: 0;
+}
+
+.memory-delete-desc {
+  font-size: 12px;
+  color: var(--muted, #63727b);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.memory-delete-badge {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.memory-delete-badge.global {
+  color: #2b6cb0;
+  background: #ebf8ff;
+  border: 1px solid #bee3f8;
+}
+
+body.dark .memory-delete-badge.global,
+.dark .memory-delete-badge.global {
+  color: #90cdf4;
+  background: rgba(43, 108, 176, 0.2);
+  border-color: rgba(144, 205, 244, 0.3);
+}
+
+.memory-delete-badge.project {
+  color: #c05621;
+  background: #fffaf0;
+  border: 1px solid #feebc8;
+}
+
+body.dark .memory-delete-badge.project,
+.dark .memory-delete-badge.project {
+  color: #fbd38d;
+  background: rgba(192, 86, 33, 0.2);
+  border-color: rgba(251, 211, 141, 0.3);
+}
+
+.memory-delete-scope-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}
+
+.memory-delete-scope-tag.global {
+  color: #2b6cb0;
+  background: #ebf8ff;
+  border: 1px solid #bee3f8;
+}
+
+body.dark .memory-delete-scope-tag.global,
+.dark .memory-delete-scope-tag.global {
+  color: #90cdf4;
+  background: rgba(43, 108, 176, 0.2);
+  border-color: rgba(144, 205, 244, 0.25);
+}
+
+.memory-delete-scope-tag.project {
+  color: #c05621;
+  background: #fffaf0;
+  border: 1px solid #feebc8;
+}
+
+body.dark .memory-delete-scope-tag.project,
+.dark .memory-delete-scope-tag.project {
+  color: #fbd38d;
+  background: rgba(192, 86, 33, 0.2);
+  border-color: rgba(251, 211, 141, 0.25);
+}
+
+/* Target Preview */
+.memory-delete-preview-box {
+  margin: 14px 0 12px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: var(--surface-2, #f5f8f9);
+  border: 1px solid var(--line, #e2e8f0);
+}
+
+body.dark .memory-delete-preview-box,
+.dark .memory-delete-preview-box {
+  background: #252321;
+  border-color: #383531;
+}
+
+.memory-delete-preview-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.memory-delete-name-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text, #1b2529);
+}
+
+.memory-delete-submeta {
+  font-size: 11px;
+  color: var(--muted, #63727b);
+}
+
+.memory-delete-preview-content {
+  font-size: 12px;
+  color: var(--muted, #63727b);
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Warning Note */
+.memory-delete-warning-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 9px 12px;
+  margin-bottom: 18px;
+  border-radius: 6px;
+  background: rgba(230, 79, 88, 0.08);
+  border: 1px solid rgba(230, 79, 88, 0.22);
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--accent, #e64f58);
+}
+
+.memory-delete-warn-icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Actions */
+.memory-delete-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.memory-delete-confirm-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--accent, #e64f58) !important;
+  color: #ffffff !important;
+  border: none;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.memory-delete-confirm-btn:hover:not(:disabled) {
+  opacity: 0.9;
+}

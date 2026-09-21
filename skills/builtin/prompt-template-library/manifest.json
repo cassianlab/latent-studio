@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "name": "prompt-template-library",
+  "index": "index.json",
+  "entrypoint": "scripts/render-template.js",
+  "resources": ["SKILL.md", "index.json", "manifest.json", "scripts/render-template.js"]
+}

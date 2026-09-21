@@ -1,0 +1,56 @@
+{
+  "name": "latent-studio-ui-shell",
+  "private": true,
+  "version": "0.9.0",
+  "type": "module",
+  "main": "out/main/index.js",
+  "scripts": {
+    "start": "electron-vite",
+    "start:app": "bash scripts/make-app.sh && open 'Latent Studio.app'",
+    "start:dev": "electron-vite",
+    "start:web": "vite --host 127.0.0.1",
+    "app:build": "bash scripts/make-app.sh",
+    "app:install": "bash scripts/make-app.sh",
+    "dev": "vite --host 127.0.0.1",
+    "dev:app": "electron-vite",
+    "build": "tsc -b && vite build",
+    "build:app": "tsc -b && tsc -p tsconfig.node.json --noEmit && electron-vite build --config electron.vite.config.ts && node scripts/copy-builtins.mjs",
+    "smoke:app": "node scripts/electron-smoke.mjs",
+    "test": "vitest run",
+    "test:unit": "vitest run tests/**/*.test.ts",
+    "test:canvas": "node --test tests/canvas-routing.test.mjs",
+    "check:file-size": "node scripts/check-file-size.mjs",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^3.8.1",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-tooltip": "^1.2.8",
+    "konva": "^9.3.18",
+    "lucide-react": "^0.468.0",
+    "motion": "^12.4.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-konva": "^19.0.3",
+    "sharp": "^0.35.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.4",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.4.1",
+    "autoprefixer": "^10.4.20",
+    "electron": "^44.3.0",
+    "electron-vite": "^5.0.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "vitest": "^4.1.11"
+  },
+  "overrides": {
+    "@huggingface/transformers": {
+      "sharp": "$sharp"
+    }
+  }
+}
